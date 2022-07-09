@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>info.magnolia.bundle</groupId>
     <artifactId>magnolia-bundle-parent</artifactId>
-    <version>6.2.2</version>
+    <version>6.2.21</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
+
   <groupId>info.magnolia</groupId>
   <artifactId>magnolia-empty-webapp</artifactId>
   <packaging>war</packaging>
-  <name>magnolia-empty-webapp</name>
+
+  <name>Magnolia empty webapp</name>
   <description>The basic Magnolia webapp on which projects can depend.</description>
+
   <profiles>
     <profile>
       <id>with-optional-modules</id>
@@ -27,6 +31,13 @@
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <!-- As of version 2.20.4 Jackrabbit changed the scope of Derby dependency to test, see JCR-4577) -->
+    <!-- Magnolia provides Derby as an embedded database in bundles, see https://docs.magnolia-cms.com/product-docs/6.2/Administration/Certified-stack.html#_databases -->
+    <dependency>
+      <groupId>org.apache.derby</groupId>
+      <artifactId>derby</artifactId>
       <scope>runtime</scope>
     </dependency>
     <dependency>
@@ -133,6 +144,10 @@
       <groupId>info.magnolia.usagemetrics</groupId>
       <artifactId>magnolia-usage-metrics</artifactId>
     </dependency>
+    <dependency>
+      <groupId>info.magnolia.content</groupId>
+      <artifactId>magnolia-content-importer</artifactId>
+    </dependency>
 
     <dependency>
       <!-- JackRabbit doesn't bring tika-parsers transitively by default, but we want it -->
@@ -165,19 +180,11 @@
     </dependency>
     <dependency>
       <groupId>info.magnolia.lang</groupId>
-      <artifactId>magnolia-lang-fi</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>info.magnolia.lang</groupId>
       <artifactId>magnolia-lang-fr</artifactId>
     </dependency>
     <dependency>
       <groupId>info.magnolia.lang</groupId>
       <artifactId>magnolia-lang-hr</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>info.magnolia.lang</groupId>
-      <artifactId>magnolia-lang-id</artifactId>
     </dependency>
     <dependency>
       <groupId>info.magnolia.lang</groupId>
@@ -197,39 +204,7 @@
     </dependency>
     <dependency>
       <groupId>info.magnolia.lang</groupId>
-      <artifactId>magnolia-lang-no</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>info.magnolia.lang</groupId>
       <artifactId>magnolia-lang-pl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>info.magnolia.lang</groupId>
-      <artifactId>magnolia-lang-pt</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>info.magnolia.lang</groupId>
-      <artifactId>magnolia-lang-pt_BR</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>info.magnolia.lang</groupId>
-      <artifactId>magnolia-lang-ru</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>info.magnolia.lang</groupId>
-      <artifactId>magnolia-lang-sk</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>info.magnolia.lang</groupId>
-      <artifactId>magnolia-lang-sq</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>info.magnolia.lang</groupId>
-      <artifactId>magnolia-lang-sv</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>info.magnolia.lang</groupId>
-      <artifactId>magnolia-lang-tr</artifactId>
     </dependency>
     <dependency>
       <groupId>info.magnolia.lang</groupId>

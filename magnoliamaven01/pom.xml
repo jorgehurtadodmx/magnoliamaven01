@@ -9,9 +9,13 @@
 	<properties>
 		<mavenCompilerVersion>3.7.0</mavenCompilerVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<magnoliaBundleVersion>6.2.2</magnoliaBundleVersion>
+		<magnoliaBundleVersion>6.2.21</magnoliaBundleVersion>
 		<javaVersion>1.8</javaVersion>
 		<jsonfnVersion>1.0.8</jsonfnVersion>
+		<magnoliaContactVersion>1.8.4</magnoliaContactVersion>
+		<magnoliaImagingVersion>3.5.3</magnoliaImagingVersion>
+		<magnoliadam>3.0.18</magnoliadam>
+
 	</properties>
 	<scm>
 		<connection />
@@ -20,6 +24,32 @@
 	</scm>
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>info.magnolia.dam</groupId>
+				<artifactId>magnolia-dam-app</artifactId>
+				<version>${magnoliadam}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>info.magnolia.dam</groupId>
+				<artifactId>magnolia-dam-api</artifactId>
+				<version>${magnoliadam}</version>
+			</dependency>
+			<dependency>
+				<groupId>info.magnolia.dam</groupId>
+				<artifactId>magnolia-dam-app-compatibility</artifactId>
+				<version>${magnoliadam}</version>
+			</dependency>
+			<dependency>
+				<groupId>info.magnolia.imaging</groupId>
+				<artifactId>magnolia-imaging-support</artifactId>
+				<version>${magnoliaImagingVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>info.magnolia.contacts</groupId>
+				<artifactId>magnolia-contacts</artifactId>
+				<version>${magnoliaContactVersion}</version>
+			</dependency>
 			<dependency>
 				<groupId>info.magnolia.templating</groupId>
 				<artifactId>magnolia-jsonfn</artifactId>
@@ -76,7 +106,7 @@
 			<url>https://maven.vaadin.com/vaadin-addons</url>
 		</repository>
 	</repositories>
-	<modules>
-		<module>magnoliamaven01-webapp</module>
-	</modules>
+    <modules>
+        <module>magnoliamaven01-webapp</module>
+    </modules>
 </project>

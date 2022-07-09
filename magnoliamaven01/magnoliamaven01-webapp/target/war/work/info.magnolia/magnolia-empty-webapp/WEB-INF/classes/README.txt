@@ -8,8 +8,8 @@
                      |___/
 
 
-        16. July 2020
-        v 6.2.2
+        6. July 2022
+        v 6.2.21
         Community Edition
 
         http://www.magnolia-cms.com/
@@ -20,11 +20,11 @@ The basic Magnolia webapp on which projects can depend.
 
 This package contains:
 
-   Magnolia Core 6.2.2
-   Magnolia Internationalization Framework 6.2.2
-   Magnolia JAAS 6.2.2
-   Magnolia Rendering 6.2.2
-   Magnolia Templating 6.2.2
+   Magnolia Core 6.2.21
+   Magnolia Internationalization Framework 6.2.21
+   Magnolia JAAS 6.2.21
+   Magnolia Rendering 6.2.21
+   Magnolia Templating 6.2.21
 
 
 ===========================================================
@@ -43,7 +43,7 @@ You can find documentation at:
     http://documentation.magnolia-cms.com/
 
 More information about this release can be found at:
-    http://documentation.magnolia-cms.com/releases/6.2.2.html
+    http://documentation.magnolia-cms.com/releases/6.2.21.html
 
 Feel free to join the community and contribute through
 bug reports, documentation, discussions, and more to help
@@ -66,7 +66,7 @@ info@magnolia-cms.com
 
 ===========================================================
 
-Copyright 2003-2020 Magnolia International Ltd.
+Copyright 2003-2022 Magnolia International Ltd.
 
 Magnolia is a registered trademark of
 Magnolia International Ltd.

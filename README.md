@@ -23,9 +23,12 @@ This creates the magnolia build of our content.
 ---------------
 
 AHORA AVERIGUAR SI PUEDO BORRAR EL WAR SIN PROBLEMA PARA PODER SUBIR CAMBIOS SIN TENER QUE REHACER LA BUILD 24/7
+BORRAR Y CATALINA START
 ------
 
 
 http://localhost:8080/magnoliamaven01/.magnolia/installer y instalar todo
 
 PROBAR CON UN GITIGNORE
+
+

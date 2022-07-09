@@ -1,6 +1,6 @@
 ===============================================
 M A G N O L I A (R)
-Magnolia Empty Webapp 6.2.2
+Magnolia Empty Webapp 6.2.21
 
 License Agreement
 ===============================================

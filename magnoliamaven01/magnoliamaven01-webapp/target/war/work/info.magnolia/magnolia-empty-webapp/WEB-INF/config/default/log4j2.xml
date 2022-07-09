@@ -172,6 +172,8 @@ Number of occurrences: %o%n
     <Logger name="httpclient" level="WARN"/>
     <Logger name="openwfe.org.log" level="WARN"/>
     <Logger name="openwfe" level="WARN"/>
+    <Logger name="graphql" level="WARN"/>
+    <Logger name="notprivacysafe.graphql" level="WARN"/>
 
     <Root level="ALL">
       <AppenderRef ref="log-error"/>
