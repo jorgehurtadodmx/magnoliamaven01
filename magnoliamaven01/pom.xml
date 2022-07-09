@@ -32,6 +32,16 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
+
+
+			<!-- https://mvnrepository.com/artifact/info.magnolia.contacts/magnolia-contacts -->
+<!--<dependency>
+    <groupId>info.magnolia.contacts</groupId>
+    <artifactId>magnolia-contacts</artifactId>
+    <version>1.8.4</version>
+</dependency> -->
+
 		</dependencies>
 	</dependencyManagement>
 	<build>
