@@ -1,0 +1,5 @@
+form:
+  properties:
+    jcrName:
+      label: New name
+      $type: textField

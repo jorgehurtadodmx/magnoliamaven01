@@ -1,0 +1,396 @@
+icon: icon-contacts-app
+class: info.magnolia.ui.contentapp.configuration.ContentAppDescriptor
+appClass: info.magnolia.ui.framework.app.BaseApp
+label: Contacts V8
+datasource:
+  $type: jcrDatasource
+  workspace: contacts
+  includeProperties: true
+  preview:
+    nodeName: photo
+  allowedNodeTypes:
+    - mgnl:contact
+    - mgnl:folder
+    - mgnl:content
+    - mgnl:contentNode
+subApps:
+  browser:
+    class: info.magnolia.ui.contentapp.configuration.BrowserDescriptor
+    actions:
+      addFolder:
+        $type: addNodeAction
+        icon: icon-add-folder
+        nodeType: mgnl:content
+        availability:
+          root: true
+          nodeTypes:
+            content: mgnl:content
+      addNode:
+        $type: addNodeAction
+        icon: icon-add-node-content
+        nodeType: mgnl:contentNode
+        availability:
+          root: true
+      duplicate:
+        $type: duplicateNodeAction
+        icon: icon-duplicate
+      add:
+        label: Add contact
+        icon: icon-people
+        $type: openDetailSubappAction
+        appName: contacts-v8
+        subAppName: detail
+        viewType: add
+      edit:
+        label: Edit
+        icon: icon-edit
+        $type: openDetailSubappAction
+        appName: contacts-v8
+        subAppName: detail
+        viewType: edit
+      export:
+        icon: icon-export
+        # see MGNLUI-5310
+        class: info.magnolia.ui.framework.action.ExportActionDefinition
+      rename:
+        icon: icon-edit
+        $type: openDialogAction
+        dialogId: contacts:rename
+      chainedAction:
+        $type: chainedAction
+        label: And and rename
+        icon: icon-add-item
+        actions:
+          add:
+            $type: addNodeAction
+          open:
+            $type: openDialogAction
+            dialogId: contacts:rename
+    actionbar:
+      sections:
+        - name: folder
+          label: folder
+          availability:
+            nodeTypes:
+              folder: mgnl:content
+          groups:
+            - name: addActions
+              items:
+                - name: addNode
+                - name: addFolder
+                - name: chainedAction
+                - name: rename
+                - name: duplicate
+                - name: add
+                - name: edit
+                - name: publish
+                - name: export
+      defaultAction: edit
+    workbench:
+      contentViews:
+        - name: tree
+          dropConstraint:
+            $type: jcrDropConstraint
+            primaryNodeType: mgnl:contact
+          $type: treeView
+          columns: &columns
+            - name: jcrName
+              label: name
+              $type: jcrTitleColumn
+              editable: true
+              nodeTypeToIcon:
+                mgnl:contact: icon-people
+                mgnl:content: icon-folder
+              editor:
+                availability:
+                  nodes: true
+                  properties: true
+            - name: value
+              label: value
+              editable: true
+              editor:
+                availability:
+                  nodes: false
+                  properties: true
+            - name: jcrPath
+              label: path
+              $type: jcrPathColumn
+            - name: status
+              label: status
+              $type: jcrStatusColumn
+            - name: progress
+              label: progress
+              renderer: com.vaadin.ui.renderers.ProgressBarRenderer
+              editable: false
+              editor:
+                availability: &onlyContacts
+                  nodeTypes:
+                    - mgnl:contact
+                  nodes: true
+                  properties: false
+                field:
+                  $type: textField
+                  converterClass: com.vaadin.data.converter.StringToDoubleConverter
+            - name: mgnl:created
+              $type: dateColumn
+              label: date
+              editable: false
+              editor:
+                availability: *onlyContacts
+                field:
+                  $type: textField
+                  converterClass: com.vaadin.data.converter.StringToDateConverter
+            - name: email
+              label: email
+              editable: true
+              editor:
+                availability: *onlyContacts
+                field:
+                  $type: textField
+                  validators:
+                    - $type: emailValidator
+            - name: compatibility
+              label: compatibility
+              # old framework types have no aliases - we'd rather encourage people to switch to the new one
+              class: info.magnolia.ui.workbench.column.definition.CompatibilityColumnDefinition
+              deprecatedColumnDefinition:
+                class: info.magnolia.ui.workbench.column.definition.NodeTypeColumnDefinition
+
+        - name: list
+          columns: *columns
+          $type: listView
+        - $type: thumbnailView
+  detail:
+    actions:
+      cancel:
+        label: cancel
+        $type: closeAction
+      commit:
+        $type: commitAction
+        label: commit
+    label: details
+    class: info.magnolia.ui.contentapp.detail.DetailDescriptor
+    itemProvider:
+      $type: jcrNodeFromLocationProvider
+      workspace: contacts
+      nodeType: mgnl:contact
+    form:
+      properties:
+        salutation:
+          label: salutation
+          $type: textField
+          i18n: true
+          defaultValue: Mr
+          description: hello
+        firstName:
+          label: first name
+          $type: textField
+          required: true
+        lastName:
+          label: last name
+          $type: textField
+          required: true
+        email:
+          label: email
+          $type: textField
+          required: true
+          validators:
+            email:
+              $type: emailValidator
+        richtext:
+          label: rich text
+          $type: richTextField
+        select:
+          label: select
+          $type: comboBoxField
+          datasource:
+            $type: jcrDatasource
+            workspace: contacts
+            describeByProperty: lastName # defaults to node path if not specified
+            allowedNodeTypes:
+              - mgnl:contact
+        twinSelect:
+          label: twinSelect
+          $type: twinColSelectField
+          #defaultValue: [ppicasso, aeinstein, ldavinci] # use node names to set defaults with JCR # this doesn't work, converter gets node names instead of uuids
+          datasource:
+            $type: jcrDatasource
+            workspace: contacts
+            describeByProperty: lastName
+            allowedNodeTypes:
+              - mgnl:contact
+        multiSelect:
+          label: multiSelect
+          $type: listSelectField
+          datasource:
+            $type: jcrDatasource
+            workspace: contacts
+            describeByProperty: firstName
+            allowedNodeTypes:
+              - mgnl:contact
+        radioGroup:
+          label: radioButtonGroup
+          $type: radioButtonGroupField
+          #defaultValue: aeinstein # this doesn't work, converter gets a node name instead of an uuid
+          datasource:
+            $type: jcrDatasource
+            workspace: contacts
+            describeByProperty: lastName
+            allowedNodeTypes:
+              - mgnl:contact
+        checkboxGroup:
+          label: checkboxGroup
+          $type: checkBoxGroupField
+          defaultValue: # an alternative way of setting multiple default values
+            - Mahler
+            - Bach
+          datasource:
+            $type: optionListDatasource
+            options:
+              - name: Vivaldi
+                value: Vivaldi
+              - name: Bach
+                value: Bach
+              - name: Bartok
+                value: Bartok
+              - name: Stravinsky
+                value: Stravinsky
+              - name: Mahler
+                value: Mahler
+        tokens:
+          label: tokens
+          $type: tokenField
+          i18n: true
+          description: description
+          comboBox:
+            datasource:
+              $type: optionListDatasource
+              options:
+                - name: foo
+                  value: foo
+                - name: bar
+                  value: bar
+        linkField:
+          label: linkField
+          $type: linkField
+          preview:
+            implementationClass: info.magnolia.contacts.app.ContactPreview
+        multi:
+          label: multi
+          i18n: true
+          $type: jcrMultiField
+          description: >
+            A multi field composed by simple fields and a composite one (address).
+            Field layout can be changed by specifying a different layout definition
+          field:
+            $type: compositeField
+            properties:
+              uno:
+                label: uno
+                $type: textField
+              dos:
+                label: dos
+                i18n: true
+                $type: textField
+              tres:
+                label: tres
+                $type: textField
+              address:
+                label: address
+                i18n: true
+                $type: compositeField
+                itemProvider:
+                  $type: jcrChildNodeProvider
+                properties:
+                  city:
+                    i18n: true
+                    label: city
+                    $type: textField
+                  country:
+                    label: country
+                    $type: textField
+        address:
+          label: address
+          i18n: true
+          $type: compositeField
+          description: >
+            A composite field made by several components.
+            Field layout can be changed by specifying a different layout definition
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            city:
+              label: city
+              $type: textField
+            country:
+              label: country
+              i18n: true
+              $type: textField
+        switchable:
+          label: switchable
+          i18n: true
+          $type: switchableField
+          field:
+            $type: radioButtonGroupField
+            datasource:
+              $type: optionListDatasource
+              options:
+                - name: foo
+                  value: foo
+                - name: bar
+                  value: bar
+          itemProvider:
+            $type: jcrChildNodeProvider
+          forms:
+            - name: foo
+              properties:
+                foo:
+                  label: foo
+                  $type: textField
+                  i18n: true
+            - name: bar
+              properties:
+                bar:
+                  label: bar
+                  $type: richTextField
+                  i18n: true
+        jcrName:
+          label: jcrName
+          $type: textField
+          validators:
+            - $type: nodeNameValidator
+        date:
+          label: date
+          $type: dateField
+          type: java.util.Date
+          time: true
+      layout:
+        $type: tabbedLayout
+        tabs:
+          personal:
+            fields:
+              - name: jcrName
+              - name: salutation
+              - name: firstName
+              - name: lastName
+              - name: email
+              - name: tokens
+              - name: date
+              - name: richtext
+          address:
+            fields:
+              - name: address
+          more:
+            fields:
+              - name: select
+              - name: twinSelect
+              - name: multiSelect
+              - name: radioGroup
+              - name: checkboxGroup
+              - name: linkField
+              - name: multi
+              - name: switchable
+    footerLayout:
+      $type: defaultEditorActionLayout
+      primaryActions:
+        commit: commit

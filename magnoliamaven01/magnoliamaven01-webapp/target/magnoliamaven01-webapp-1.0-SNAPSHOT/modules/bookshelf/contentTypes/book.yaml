@@ -1,0 +1,28 @@
+# Automatically generated contentType demonstrates usage of the common properties.
+# TYPE DEFINITION OF APP
+# Modify them to match your requirements.
+datasource: 
+  workspace: books
+  rootPath: /
+  namespaces:
+    lib: https://www.magnolia-travel.com/jcr/1.0/lib
+  autoCreate: true
+
+    # Optionally configure a custom namespace. (Replace [myNamespace] everywhere.)
+    # This namespace can then be used below for the nodetype.
+    # namespaces:
+    #   [myNamespace]: https://www.[myDomain.com]/jcr/1.0/[myNamespace]
+
+
+model: 
+  nodeType: lib:book
+  properties: 
+    - name: authors
+    - name: ed 
+      type: Boolean
+    - name: title
+    - name: description
+    - name: publisher
+    - name: publish_date 
+      type: Date
+    - name: isbn13

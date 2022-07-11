@@ -1,0 +1,34 @@
+<vaadin-vertical-layout spacing="false">
+    <vaadin-vertical-layout spacing="false" style-name="container">
+        <vaadin-label width-auto>Hello declarative layout</vaadin-label>
+        <mgnl-separator />
+        <vaadin-label width-auto>${i18n.get("contacts.label")}</vaadin-label>
+    </vaadin-vertical-layout>
+
+    <mgnl-group caption='${i18n.get("contacts.personal")}'>
+        <vaadin-form-layout>
+            <form-salutation/>
+            <form-firstName/>
+            <form-lastName/>
+            <form-email/>
+            <form-tokens/>
+            <form-richtext/>
+        </vaadin-form-layout>
+    </mgnl-group>
+
+    <mgnl-group caption="More">
+        <vaadin-form-layout>
+            <form-address />
+        </vaadin-form-layout>
+    </mgnl-group>
+
+    <mgnl-group caption="Selects">
+        <vaadin-form-layout>
+            <form-select />
+            <form-twinSelect />
+            <form-multiSelect />
+            <form-linkField />
+        </vaadin-form-layout>
+    </mgnl-group>
+
+</vaadin-vertical-layout>
