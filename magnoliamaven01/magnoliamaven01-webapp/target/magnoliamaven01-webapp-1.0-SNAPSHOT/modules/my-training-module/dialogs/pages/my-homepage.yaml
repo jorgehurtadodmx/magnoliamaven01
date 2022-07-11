@@ -1,0 +1,6 @@
+label: Page properties
+form:
+  properties:
+    title:
+     $type: textField
+     label: Title

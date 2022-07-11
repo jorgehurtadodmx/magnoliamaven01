@@ -1,0 +1,18 @@
+datasource: 
+  workspace: gallery
+  rootPath: /
+  autoCreate: true
+
+model: 
+  nodeType: image-gallery
+  properties: 
+    - name: indeximagen
+      required: true
+    - name: tituloimagen
+      required: true
+      i18n: true
+    - name: descripción imagen
+    - name: fecha de subida 
+      type: Date
+    - name: upload_photo
+    - name: photo text

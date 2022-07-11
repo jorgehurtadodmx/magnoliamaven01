@@ -1,0 +1,5 @@
+title: Header component stuff
+templateScript: /project-multiverse-module/templates/components/headercomponent.ftl #HTML OF HEADER
+dialog: project-multiverse-module:components/headercomponent #PROPERTIES TO EDIT HEADER
+renderType: freemarker
+visible: true

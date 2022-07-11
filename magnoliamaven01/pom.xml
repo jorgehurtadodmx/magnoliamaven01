@@ -17,6 +17,9 @@
 		<magnoliadam>3.0.18</magnoliadam>
 		<magnoliaDamVersion>3.0.18</magnoliaDamVersion>
 		<magnoliaSiteVersion>1.4.4</magnoliaSiteVersion>
+		<magnoliarssaggregatorversion>2.6.4</magnoliarssaggregatorversion>
+		<magnoliamteversion>2.0.2</magnoliamteversion>
+	<!--	<magnoliagraphqlversion>1.0.2</magnoliagraphqlversion>-->
 	</properties>
 	<scm>
 		<connection />
@@ -26,6 +29,51 @@
 	<dependencyManagement>
 		<dependencies>
 
+<!--<dependency>
+  <groupId>info.magnolia.graphql</groupId>
+  <artifactId>magnolia-graphql-core</artifactId>
+  <version>${magnoliagraphqlversion}</version>
+</dependency>
+
+<dependency>
+  <groupId>info.magnolia.graphql</groupId>
+  <artifactId>magnolia-graphql-jcr</artifactId>
+  <version>${magnoliagraphqlversion}</version>
+</dependency>
+<dependency>
+  <groupId>info.magnolia.graphql</groupId>
+  <artifactId>magnolia-graphql-assets</artifactId>
+  <version>${magnoliagraphqlversion}</version>
+</dependency>
+
+-->
+		<dependency>
+  <groupId>info.magnolia.templating</groupId>
+  <artifactId>magnolia-templating-kit-2</artifactId>
+  <version>${magnoliamteversion}</version>
+</dependency>
+<dependency>
+  <groupId>info.magnolia.templating</groupId>
+  <artifactId>magnolia-templating-essentials-models</artifactId>
+  <version>${magnoliamteversion}</version>
+</dependency>
+
+<dependency>
+  <groupId>info.magnolia.templating</groupId>
+  <artifactId>magnolia-templating-essentials-imaging</artifactId>
+  <version>${magnoliamteversion}</version>
+</dependency>
+
+<dependency>
+  <groupId>info.magnolia.templating</groupId>
+  <artifactId>magnolia-templating-kit</artifactId>
+  <version>${magnoliamteversion}</version>
+</dependency>
+<dependency>
+  <groupId>info.magnolia</groupId>
+  <artifactId>magnolia-module-rssaggregator</artifactId>
+  <version>${magnoliarssaggregatorversion}</version>
+</dependency>
 
 			<dependency>
 				<groupId>info.magnolia.dam</groupId>

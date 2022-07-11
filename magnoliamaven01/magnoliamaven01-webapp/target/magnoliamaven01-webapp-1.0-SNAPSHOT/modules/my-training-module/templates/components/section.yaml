@@ -1,0 +1,4 @@
+title: section
+renderType: freemarker
+templateScript: /my-training-module/templates/components/section.ftl
+dialog: my-training-module:components/section

@@ -1,0 +1,17 @@
+label: Page properties
+form:
+  properties:
+    navigationTitle:
+      $type: textField
+      label: Navigation Title
+      description: Used for the Navigation. If not defined, the Page Title will be used.
+    title:
+      $type: textField
+      label: Page Title
+      description: Define the Page's title. The Page Title is also the fallback value of the Navigation Title.
+      required: true
+    abstract:
+      $type: richTextField
+      label: Abstract
+      description: Add an Abstract of the Page.
+    imageLink: !include:/my-training-module/includes/dialogs/imageLinkField.yaml

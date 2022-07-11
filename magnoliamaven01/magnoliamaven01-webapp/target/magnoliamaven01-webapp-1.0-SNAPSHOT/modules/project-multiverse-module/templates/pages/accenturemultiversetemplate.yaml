@@ -1,0 +1,7 @@
+title: accenturemultiversetemplate
+templateScript: /project-multiverse-module/templates/pages/accenturemultiversetemplate.ftl
+renderType: freemarker
+visible: true
+areas:
+  main:
+    type: noComponent

@@ -1,0 +1,27 @@
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+    description:
+      $type: textField
+      label: Description
+  layout:
+    $type: tabbedLayout
+    tabs:
+      firstTab:
+        label: first part of header
+        fields:
+          - name: title
+      secondTab:
+        label: second part of header
+        fields:
+          - name: description
+footerLayout:
+  $type: defaultEditorActionLayout
+  primaryActions:
+    commit: commit
+#https://docs.magnolia-cms.com/product-docs/6.2/Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI.html
+#https://docs.magnolia-cms.com/product-docs/6.2/Developing/Templating/Dialog-definition.html
+
+#ESTE DIALOG PERMITE OBTENER PROPIEDADES DE EDICIÓN PARA EL HEADER

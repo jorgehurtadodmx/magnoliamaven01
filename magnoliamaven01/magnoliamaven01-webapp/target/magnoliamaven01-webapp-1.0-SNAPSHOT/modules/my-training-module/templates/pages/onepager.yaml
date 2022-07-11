@@ -1,0 +1,18 @@
+title: FE One-Pager
+templateScript: /my-training-module/templates/pages/onepager.ftl
+renderType: freemarker
+dialog: my-training-module/:pages/onepager
+visible: true
+areas:
+  main:
+    availableComponents:
+      section:
+        id: my-training-module:components/section
+      banner:
+        id: my-training-module:components/banner
+  footer:
+    availableComponents:
+      mtkTextImage:
+        id: mtk2:components/textImage
+    templateScript: /my-training-module/templates/pages/areas/footerArea.ftl
+    maxComponents: 3

@@ -1,0 +1,82 @@
+form:
+  $type: tabbedForm
+  tabs:
+    firstTab:
+      label: firstTab
+      fields:
+        firstsectiontitle:
+          label: firstsectiontitle
+          $type: textField
+          required: true
+        code:
+          label: Code editor
+          $type: codeField
+          height: 50
+          language: freemarker
+          readOnly: True
+        firstdescription:
+          label: firstdescription
+          $type: textField
+          required: true
+    secondTab:
+      label: socialTab
+      fields:
+        firstSocial:
+          label: firstSocial
+          $type: textField
+          required: true
+        secondSocial:
+          label: secondSocial
+          $type: textField
+          required: true
+    contactTab:
+      label: contactTab
+      fields:
+        firstContactForm:
+          label: firstContactForm
+          $type: textField
+          required: true
+        formName:
+          label: formName
+          $type: textField
+          required: true
+        formEmail:
+          label: formEmail
+          $type: textField
+          required: true
+
+
+        formMessage:
+          label: formMessage
+          $type: textField
+          required: true
+        sendButton:
+          label: sendButton
+          $type: textField
+          required: true
+        resetForm:
+          label: resetForm
+          $type: textField
+          required: true
+
+
+
+
+
+
+footerLayout:
+  $type: defaultEditorActionLayout
+  primaryActions:
+    commit: commit
+    cancel: cancel
+#https://docs.magnolia-cms.com/product-docs/6.2/Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI.html
+#https://docs.magnolia-cms.com/product-docs/6.2/Developing/Templating/Dialog-definition.html
+
+#ESTE DIALOG PERMITE OBTENER PROPIEDADES DE EDICIÓN PARA EL FOOTER
+# 3 SECTIONS
+
+#SECTION 1.1    SECTION 3.1
+#SECTION 1.2    SECTION 3.2   SECTION 3.3
+
+#SECTION 2.1    SECTION 3.4
+#SECTION 2.2    SECTION 3.5   SECTION 3.6

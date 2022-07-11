@@ -11,6 +11,42 @@
 	<name>magnoliamaven01: webapp</name>
 	<packaging>war</packaging>
 	<dependencies>
+<!--<dependency>
+  <groupId>info.magnolia.graphql</groupId>
+  <artifactId>magnolia-graphql-core</artifactId>
+</dependency>
+<dependency>
+  <groupId>info.magnolia.graphql</groupId>
+  <artifactId>magnolia-graphql-jcr</artifactId>
+</dependency>
+<dependency>
+  <groupId>info.magnolia.graphql</groupId>
+  <artifactId>magnolia-graphql-assets</artifactId>
+</dependency>-->
+	<dependency>
+  <groupId>info.magnolia</groupId>
+  <artifactId>magnolia-module-rssaggregator</artifactId>
+</dependency>
+
+	<dependency>
+  <groupId>info.magnolia.templating</groupId>
+  <artifactId>magnolia-templating-kit-2</artifactId>
+</dependency>
+<dependency>
+  <groupId>info.magnolia.templating</groupId>
+  <artifactId>magnolia-templating-essentials-models</artifactId>
+</dependency>
+
+<dependency>
+  <groupId>info.magnolia.templating</groupId>
+  <artifactId>magnolia-templating-essentials-imaging</artifactId>
+</dependency>
+
+<dependency>
+  <groupId>info.magnolia.templating</groupId>
+  <artifactId>magnolia-templating-kit</artifactId>
+</dependency>
+
 		<dependency>
 			<groupId>info.magnolia</groupId>
 			<artifactId>magnolia-empty-webapp</artifactId>

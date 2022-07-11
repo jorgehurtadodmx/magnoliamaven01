@@ -1,0 +1,37 @@
+datasource:
+  workspace: events12
+  autoCreate: true
+model:
+  nodeType: event
+  properties:
+    # name will be automatically added by Magnolia
+    location:
+      label: Location
+      required: true
+    description:
+      type: richText
+      label: Description
+      required: true
+    eventType:
+      label: Event Type
+      options:
+        workEvent:
+          label: Work Event
+          value: workEvent
+        holiday:
+          label: Holiday
+          value: holiday
+        familyEvent:
+          label: Family Event
+          value: familyEvent
+        other:
+          label: Other
+          value: other
+    date:
+      type: Date
+      label: Date
+      required: true
+    imageLink:
+      type: asset
+      label: Image
+      required: true

@@ -1,0 +1,16 @@
+label: main page properties
+form:
+  properties:
+    name:
+      $type: textField
+      i18n: true
+      required: true
+    title:
+      $type: textField
+      i18n: true
+    metaDescription:
+      $type: textField
+      i18n: true
+    metaAuthor:
+      $type: textField
+    

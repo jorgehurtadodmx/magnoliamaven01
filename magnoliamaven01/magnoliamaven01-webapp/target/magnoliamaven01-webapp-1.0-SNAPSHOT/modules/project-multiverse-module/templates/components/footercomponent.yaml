@@ -1,0 +1,4 @@
+title: footercomponent
+templateScript: /project-multiverse-module/templates/components/footercomponent.ftl
+dialog: project-multiverse-module:components/footercomponent
+renderType: freemarker

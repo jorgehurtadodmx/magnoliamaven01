@@ -1,0 +1,5 @@
+label: Select image
+$type: linkField
+chooser:
+  workbenchChooser:
+    appName: dam-chooser

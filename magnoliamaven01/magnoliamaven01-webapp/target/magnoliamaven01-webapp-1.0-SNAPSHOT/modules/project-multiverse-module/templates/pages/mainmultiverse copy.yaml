@@ -1,0 +1,20 @@
+title: mainmultiverse
+templateScript: /project-multiverse-module/templates/pages/mainmultiverse.ftl
+dialog: project-multiverse-module:pages/mainmultiverse
+#dialog hace referencia a la ruta donde se marcan las propiedades para edición de dicha pagina
+
+renderType: freemarker
+visible: true
+areas: #areas enlazadas con la vista html (ftl)
+  main:
+    type: noComponent
+  header:
+    availableComponents:
+      headercomponent:
+        id: project-multiverse-module:components/headercomponent
+
+
+  footer:
+    availableComponents:
+      footercomponent:
+        id: project-multiverse-module:components/footercomponent

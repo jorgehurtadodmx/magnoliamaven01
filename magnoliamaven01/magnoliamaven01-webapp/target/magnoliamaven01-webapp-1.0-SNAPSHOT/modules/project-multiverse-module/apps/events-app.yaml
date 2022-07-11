@@ -1,0 +1,19 @@
+!content-type:event
+name: events-app
+label: Events
+icon: icon-language-app
+subApps:
+  detail:
+    form:
+      properties:
+        location:
+          rows: 3
+
+  browser:
+    workbench:
+      contentViews:
+        tree:
+          columns:
+            location:
+              label: Location
+              width: 200

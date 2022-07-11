@@ -1,0 +1,31 @@
+    navigationTitle:
+      $type: textField
+      label: Navigation Title
+      description: Used for the Navigation. If not defined, the Page Title will be used.
+    headline:
+      $type: textField
+      label: Headline
+      required: true
+      description: Define a Headline for the Section. The Headline is also the fallback value of the Navigation Title.
+    subHeadline:
+      $type: textField
+      label: Sub-Headline
+      description: Define a Sub-Headline for the Section. Text will be displayed right below the Headline and in smaller font.
+    text:
+      $type: richTextField
+      label: Text
+      description: Add longer texts to the Section. Texts will be in rich text format.
+    imageLink: !include:/my-training-module/includes/dialogs/imageLinkField.yaml
+    textPosition:
+      $type: radioButtonGroupField
+      label: Text Position
+      description: Choose whether the text should be positioned to the left or to the right.
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: left
+            value: left
+            label: Left
+          - name: right
+            value: right
+            label: Right

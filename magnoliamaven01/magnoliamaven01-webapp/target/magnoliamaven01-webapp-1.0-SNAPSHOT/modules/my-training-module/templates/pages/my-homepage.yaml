@@ -1,0 +1,10 @@
+title: my-homepage
+templateScript: /my-training-module/templates/pages/my-homepage.ftl
+dialog: my-training-module:pages/my-homepage
+renderType: freemarker
+visible: true
+areas:
+  main:
+    availableComponents:
+      banner:
+        id: my-training-module:components/banner

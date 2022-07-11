@@ -1,0 +1,14 @@
+datasource: 
+  workspace: rrss
+  rootPath: /
+  autoCreate: true
+
+model: 
+  nodeType: rrss-links
+  properties: 
+    - name: title
+      required: true
+    - name: link
+      required: true
+    - name: photo
+      required: true
